@@ -1,0 +1,59 @@
+.library{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    background: #fff;
+    box-shadow: 2px 2px 50px rgb(204, 204, 204);
+    overflow: scroll;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    opacity: 0;
+    z-index: 1;
+    &.active{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    & h2{
+        padding-left: 2rem;
+    }
+    &-song{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    &-songs{
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        transition: background 0.5s ease;
+        & img{
+            width: 30%;
+        }
+        & .title-control{
+        
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+            & h3{
+                font-size: 1rem;
+            }
+            & h4{
+                font-size: 0.7rem;
+            }
+        }
+        &.selected{
+            background: rgb(145, 165, 218);
+        }
+        &:hover{
+            background: rgb(222, 222, 225);
+        }
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        right: 0;
+    }
+}
